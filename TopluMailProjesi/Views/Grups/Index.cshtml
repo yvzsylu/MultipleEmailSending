@@ -1,0 +1,38 @@
+﻿@model IEnumerable<TopluMailProjesi.Models.Grup>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Yeni Grup Ekle</a>
+</p>
+<table class="table table-hover">
+    <thead >
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.GrupAdi)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td >
+                @Html.DisplayFor(modelItem => item.GrupAdi)
+            </td>
+            
+            <td align="right" >
+                <a asp-action="Edit" asp-route-id="@item.GrupId">Düzenle</a> |
+                <a asp-action="Details" asp-route-id="@item.GrupId">Detaylar</a> |
+                <a asp-action="Delete" asp-route-id="@item.GrupId"  class="btn btn-danger">Sil</a>
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>

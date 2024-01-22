@@ -1,0 +1,25 @@
+﻿@model TopluMailProjesi.Models.Grup
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detaylar</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GrupAdi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GrupAdi)
+        </dd>
+        
+        
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.GrupId">Düzenle</a> |
+    <a asp-action="Index">Geri Dön</a>
+</div>

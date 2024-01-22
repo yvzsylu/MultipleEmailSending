@@ -1,0 +1,54 @@
+﻿@model IEnumerable<TopluMailProjesi.Models.MailTaslak>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Yeni Taslak Ekle</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Baslik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GonderimTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SorguNo)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Baslik)
+            </td>
+            <td class=" text-truncate" style="max-width: 150px;">
+                @Html.DisplayFor(modelItem => item.Aciklama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GonderimTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SorguNo)
+            </td>
+            
+            <td align="right">
+                <a asp-action="Edit" asp-route-id="@item.MailTaslakId">Düzenle</a> |
+                <a asp-action="Details" asp-route-id="@item.MailTaslakId">Detaylar</a> |
+                <a asp-action="Delete" asp-route-id="@item.MailTaslakId"  class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

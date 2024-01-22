@@ -1,0 +1,40 @@
+﻿@model IEnumerable<TopluMailProjesi.Models.MailDokuman>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Maile Döküman Ekle</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dokuman)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MailTaslak)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dokuman.DokumanYolu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailTaslak.Baslik)
+            </td>
+            <td align="right">
+                <a asp-action="Edit" asp-route-id="@item.MailDokumanId">Düzenle</a> |
+                <a asp-action="Details" asp-route-id="@item.MailDokumanId">Detaylar</a> |
+                <a asp-action="Delete" asp-route-id="@item.MailDokumanId"  class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

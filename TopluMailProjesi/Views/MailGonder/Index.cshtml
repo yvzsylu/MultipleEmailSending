@@ -1,0 +1,36 @@
+﻿@model TopluMailProjesi.Models.MailGonderViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Gruplara Mail Gönder</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MailTaslakId" class="control-label"></label>
+                <select asp-for="MailTaslakId" class ="form-select" asp-items="ViewBag.MailTaslakId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrupId" class="control-label"></label>
+                <select asp-for="GrupId" class ="form-select" asp-items="ViewBag.GrupId"></select>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Gönder" class="btn btn-primary" />
+            </div>
+            <br />
+            <span>@TempData["Message"]</span>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,52 @@
+﻿@model TopluMailProjesi.Models.MailTaslak
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Ekle</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Baslik" class="control-label"></label>
+                <input asp-for="Baslik" class="form-control" />
+                <span asp-validation-for="Baslik" class="text-danger"></span>
+            </div>
+            <div class="form-outline mb-4">
+                <label class="form-label" asp-for="Aciklama">Açıklama</label>
+                <textarea class="form-control" asp-for="Aciklama" rows="4"></textarea>
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="GonderimTarihi" class="control-label"></label>
+                <input asp-for="GonderimTarihi" class="form-control" />
+                <span asp-validation-for="GonderimTarihi" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SorguNo" class="control-label"></label>
+                <input asp-for="SorguNo" class="form-control" />
+                <span asp-validation-for="SorguNo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Ekle" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Geri Dön</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

@@ -1,0 +1,32 @@
+﻿@model TopluMailProjesi.Models.KisiGrup
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detaylar</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Grup)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Grup.GrupAdi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kisi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kisi.Adi)
+            @Html.DisplayFor(model => model.Kisi.Soyadi)
+
+        </dd>
+        
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.KisiGrupId">Edit</a> |
+    <a asp-action="Index">Geri Dön</a>
+</div>

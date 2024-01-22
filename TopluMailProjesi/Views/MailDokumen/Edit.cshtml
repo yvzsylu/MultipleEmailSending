@@ -1,0 +1,38 @@
+﻿@model TopluMailProjesi.Models.MailDokuman
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Düzenle</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MailDokumanId" />
+            <div class="form-group">
+                <label asp-for="MailTaslakId" class="control-label"></label>
+                <select asp-for="MailTaslakId" class="form-select" asp-items="ViewBag.MailTaslakId"></select>
+                <span asp-validation-for="MailTaslakId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DokumanId" class="control-label"></label>
+                <select asp-for="DokumanId" class="form-select" asp-items="ViewBag.DokumanId"></select>
+                <span asp-validation-for="DokumanId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Geri Dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

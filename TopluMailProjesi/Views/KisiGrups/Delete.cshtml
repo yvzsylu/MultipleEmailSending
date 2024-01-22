@@ -1,0 +1,36 @@
+﻿@model TopluMailProjesi.Models.KisiGrup
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Sil</h1>
+
+<h3>Tüm Bilgiler Silinecek ?</h3>
+<div>
+<div>
+    <h4>KisiGrup</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Grup)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Grup.GrupAdi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kisi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kisi.Adi)
+        </dd>
+        
+        
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="KisiGrupId" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a asp-action="Index">Geri Dön</a>
+    </form>
+</div>

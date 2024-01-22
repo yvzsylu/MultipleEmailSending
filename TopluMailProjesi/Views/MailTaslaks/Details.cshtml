@@ -1,0 +1,43 @@
+﻿@model TopluMailProjesi.Models.MailTaslak
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detaylar</h1>
+
+<div>
+    <h4>MailTaslak</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Baslik)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Baslik)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GonderimTarihi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GonderimTarihi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SorguNo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SorguNo)
+        </dd>
+        
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.MailTaslakId">Düzenle</a> |
+    <a asp-action="Index">Geri Dön</a>
+</div>

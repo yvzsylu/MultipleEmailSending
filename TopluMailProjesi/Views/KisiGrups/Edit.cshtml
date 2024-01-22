@@ -1,0 +1,39 @@
+﻿@model TopluMailProjesi.Models.KisiGrup
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Düzenle</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="KisiGrupId" />
+            <div class="form-group">
+                <label asp-for="KisiId" class="control-label"></label>
+                <select asp-for="KisiId" class="form-select" asp-items="ViewBag.KisiId"></select>
+                <span asp-validation-for="KisiId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrupId" class="control-label"></label>
+                <select asp-for="GrupId" class="form-select" asp-items="ViewBag.GrupId"></select>
+                <span asp-validation-for="GrupId" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Geri Dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

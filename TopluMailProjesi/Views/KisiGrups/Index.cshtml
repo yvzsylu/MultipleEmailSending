@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TopluMailProjesi.Models.KisiGrup>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Gruba Kişi Ekle</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Kisi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grup)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kisi.Adi)
+                @Html.DisplayFor(modelItem => item.Kisi.Soyadi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grup.GrupAdi)
+            </td>
+            
+            
+            <td align="right">
+                <a asp-action="Edit" asp-route-id="@item.KisiGrupId">Düzenle</a> |
+                <a asp-action="Details" asp-route-id="@item.KisiGrupId">Detaylar</a> |
+                <a asp-action="Delete" asp-route-id="@item.KisiGrupId"  class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
